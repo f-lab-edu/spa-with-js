@@ -1,3 +1,4 @@
+import './app.css';
 function App() {
   const $app = document.getElementById('app');
   $app.innerHTML = '<h1>SPA 동작완료</h1>';
