@@ -11,6 +11,8 @@ module.exports = {
   },
   module: {
     rules: [
+      // css 파일 처리
+      { test: /\.css$/, use: ['style-loader', 'css-loader'] },
       {
         test: /\.js$/,
         exclude: /node_modules/,
