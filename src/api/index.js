@@ -1,6 +1,6 @@
 import axios from 'axios';
 import apiConfig from './config';
 
-const Index = axios.create(apiConfig);
+const api = axios.create(apiConfig);
 
-export default Index;
+export default api;

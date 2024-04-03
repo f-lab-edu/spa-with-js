@@ -1,12 +1,11 @@
 import API from './index';
+import apiTryCatch from '../utils/apiUtil';
 
 const getTodo = async (todoId) => {
-  try {
-    const response = await API.get(`/todos/${todoId}`);
-    return response.data;
-  } catch (error) {
-    console.error(error);
-    throw error;
-  }
+  const apiCall = () => API.get(`/todos/${todoId}`);
+  const [response, error] = await apiTryCatch(apiCall);
+
+  if (error) throw error;
+  return response.data;
 };
 export { getTodo };
