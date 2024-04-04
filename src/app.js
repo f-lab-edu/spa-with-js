@@ -13,7 +13,7 @@ class App {
     };
 
     const todoComponent = new Todo(todoProps);
-    await todoComponent.fetchTodoData();
+    await todoComponent.fetchTodo();
 
     this.app.appendChild(todoComponent.render());
 

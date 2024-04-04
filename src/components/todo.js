@@ -6,13 +6,13 @@ class Todo {
     this.todo = null;
   }
 
-  async fetchTodoData() {
-    try {
-      this.todo = await getTodo(this.todoId);
-      this.render();
-    } catch (error) {
-      console.error('Todo error :', error);
+  async fetchTodo() {
+    const [todo, error] = await getTodo(this.todoId);
+    if (error) {
+      return console.error(error);
     }
+    this.todo = todo;
+    this.render();
   }
 
   render() {

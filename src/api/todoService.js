@@ -5,7 +5,6 @@ const getTodo = async (todoId) => {
   const apiCall = () => API.get(`/todos/${todoId}`);
   const [response, error] = await apiTryCatch(apiCall);
 
-  if (error) throw error;
-  return response.data;
+  return [response?.data, error];
 };
 export { getTodo };
