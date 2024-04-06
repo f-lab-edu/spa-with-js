@@ -7,11 +7,9 @@ class Todo {
   }
 
   async fetchTodo() {
-    const [todo, error] = await getTodo(this.todoId);
-    if (error) {
-      return console.error(error);
-    }
-    this.todo = todo;
+    this.todo = await getTodo(this.todoId, (e) =>
+      console.log('fetchTodoError: ', e),
+    );
     this.render();
   }
 
