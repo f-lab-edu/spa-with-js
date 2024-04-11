@@ -1,8 +1,29 @@
-function App() {
-  const $app = document.getElementById('app');
-  $app.innerHTML = '<h1>SPA 동작완료</h1>';
+import Todo from './components/Todo';
+import './app.css';
 
-  return $app;
+class App {
+  constructor() {
+    this.app = document.createElement('div');
+    this.app.id = 'app';
+  }
+
+  async render() {
+    const todoProps = {
+      todoId: 1,
+    };
+
+    const todoComponent = new Todo(todoProps);
+    await todoComponent.fetchTodo();
+
+    this.app.appendChild(todoComponent.render());
+
+    return this.app;
+  }
 }
 
-document.body.appendChild(App());
+const appComponent = new App();
+
+(async () => {
+  const $app = await appComponent.render();
+  document.body.appendChild($app);
+})();
