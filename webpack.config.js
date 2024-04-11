@@ -38,5 +38,6 @@ module.exports = {
     },
     compress: true,
     port: 9000,
+    historyApiFallback: true, // 모든 경로를 index.html 로 리다이렉션
   },
 };
