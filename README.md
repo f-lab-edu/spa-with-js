@@ -14,3 +14,7 @@ Vanilla JavaScript를 사용한 Single Page Application(SPA)
 
 ### 스타일 작성법
 1. 컴포넌트와 동일한 이름의 css파일을 styles 폴더안에 생성하여 작성
+
+### 라우팅 방법
+- 예시 : /routes.js
+- 해당 파일에 routes 변수 안에 { path: '주소', component : 컴포넌트 } 로 매칭하여 사용

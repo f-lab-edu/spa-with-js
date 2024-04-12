@@ -1,20 +1,20 @@
-import List from './pages/list';
-import Detail from './pages/detail';
 import './app.css';
 import { Router } from './router';
+import routes from './routes';
+import NotFound from './pages/notFound';
 
 class App {
   constructor() {
-    this.router = new Router();
+    this.router = new Router(NotFound);
     this.initializeRoutes();
     this.addEventListeners();
   }
 
   // 주소 라우팅 등록
   initializeRoutes() {
-    this.router.addRoute('/', List);
-    this.router.addRoute('/list', List);
-    this.router.addRoute('/detail', Detail);
+    routes.forEach((route) => {
+      this.router.addRoute(route.path, route.component);
+    });
   }
 
   // 이벤트 등록

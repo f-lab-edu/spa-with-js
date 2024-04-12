@@ -1,9 +1,7 @@
-// router.js
-import NotFound from './pages/notFound';
-
 export class Router {
-  constructor() {
+  constructor(notFoundComponent) {
     this.routes = {};
+    this.notFoundComponent = notFoundComponent;
   }
 
   // 라우터 등록
@@ -12,7 +10,7 @@ export class Router {
   }
 
   async render(path) {
-    const Component = this.routes[path] || NotFound;
+    const Component = this.routes[path] || this.notFoundComponent;
     const $app = document.getElementById('app');
     $app.innerHTML = ''; // 기존 컨텐츠를 클리어
     const componentInstance = new Component();

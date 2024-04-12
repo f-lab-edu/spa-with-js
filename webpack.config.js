@@ -8,6 +8,7 @@ module.exports = {
     // 출력 파일 설정
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
   },
   module: {
     rules: [
