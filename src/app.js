@@ -19,7 +19,8 @@ class App {
   // 이벤트 등록
   addEventListeners() {
     document.addEventListener('DOMContentLoaded', async () => {
-      await this.router.render(window.location.pathname);
+      const fullPath = window.location.href;
+      await this.router.render(fullPath);
     });
   }
 }
