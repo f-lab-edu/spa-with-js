@@ -1,4 +1,4 @@
-class NotFound {
+class NotFoundPage {
   constructor(props) {}
 
   render() {
@@ -7,4 +7,4 @@ class NotFound {
     return $notFoundPage;
   }
 }
-export default NotFound;
+export default NotFoundPage;

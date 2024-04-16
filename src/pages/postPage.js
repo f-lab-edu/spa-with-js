@@ -1,4 +1,4 @@
-class Post {
+class PostPage {
   constructor(props) {}
 
   render() {
@@ -7,4 +7,4 @@ class Post {
     return $postPage;
   }
 }
-export default Post;
+export default PostPage;

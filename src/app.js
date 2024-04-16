@@ -1,11 +1,10 @@
 import './app.css';
 import { Router } from './router';
 import routes from './routes';
-import NotFound from './pages/notFound';
 
 class App {
   constructor() {
-    this.router = new Router(NotFound);
+    this.router = new Router();
     this.initializeRoutes();
     this.addEventListeners();
   }

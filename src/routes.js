@@ -1,10 +1,12 @@
-import Posts from './pages/posts';
-import Post from './pages/post';
+import PostsPage from './pages/postsPage';
+import PostPage from './pages/postPage';
+import NotFound from './pages/notFoundPage';
 
 const routes = [
-  { path: '/', component: Posts },
-  { path: '/posts', component: Posts },
-  { path: '/post', component: Post },
+  { path: '/', component: PostsPage },
+  { path: '/posts', component: PostsPage },
+  { path: '/post', component: PostPage },
+  { path: '*', component: NotFound },
 ];
 
 export default routes;
