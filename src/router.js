@@ -1,7 +1,6 @@
 export class Router {
-  constructor(notFoundComponent) {
+  constructor() {
     this.routes = {};
-    this.notFoundComponent = notFoundComponent;
   }
 
   // 라우터 등록
