@@ -17,4 +17,5 @@ Vanilla JavaScript를 사용한 Single Page Application(SPA)
 
 ### 라우팅 방법
 - 예시 : /routes.js
-- 해당 파일에 routes 변수 안에 { path: '주소', component : 컴포넌트 } 로 매칭하여 사용
+1. 해당 파일에 routes 변수 안에 { path: '주소', component : 컴포넌트 } 로 매칭하여 사용
+2. searchParams 사용시 사용할 페이지 클래스에 props.searchParams로 넘어오므로 constructor에서 props.searchParams.get('사용 할 파라미터')로 사
