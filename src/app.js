@@ -1,29 +1,28 @@
-import Todo from './components/Todo';
 import './app.css';
+import { Router } from './router';
+import routes from './routes';
 
 class App {
   constructor() {
-    this.app = document.createElement('div');
-    this.app.id = 'app';
+    this.router = new Router();
+    this.initializeRoutes();
+    this.addEventListeners();
   }
 
-  async render() {
-    const todoProps = {
-      todoId: 1,
-    };
+  // 주소 라우팅 등록
+  initializeRoutes() {
+    routes.forEach((route) => {
+      this.router.addRoute(route.path, route.component);
+    });
+  }
 
-    const todoComponent = new Todo(todoProps);
-    await todoComponent.fetchTodo();
-
-    this.app.appendChild(todoComponent.render());
-
-    return this.app;
+  // 이벤트 등록
+  addEventListeners() {
+    document.addEventListener('DOMContentLoaded', async () => {
+      const fullPath = window.location.href;
+      await this.router.render(fullPath);
+    });
   }
 }
 
-const appComponent = new App();
-
-(async () => {
-  const $app = await appComponent.render();
-  document.body.appendChild($app);
-})();
+new App();
