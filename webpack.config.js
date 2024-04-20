@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'none',
-  entry: './src/app.js', // 진입점 설정
+  entry: './src/app.ts', // 진입점 설정
   output: {
     // 출력 파일 설정
     filename: 'bundle.js',
@@ -23,6 +23,11 @@ module.exports = {
             presets: ['@babel/preset-env'],
           },
         },
+      },
+      {
+        test: /\.ts$/, // .ts 파일 처리
+        use: 'ts-loader',
+        exclude: /node_modules/,
       },
     ],
   },
