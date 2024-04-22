@@ -1,10 +1,14 @@
+type PostPageProps = {
+  searchParams: URLSearchParams;
+};
 class PostPage {
-  constructor(props) {
+  private readonly postId: string | null;
+  constructor(props: PostPageProps) {
     this.postId = props.searchParams.get('id');
   }
 
-  render() {
-    const $postPage = document.createElement('div');
+  render(): HTMLDivElement {
+    const $postPage: HTMLDivElement = document.createElement('div');
     $postPage.innerText = this.postId
       ? `디테일: ${this.postId}`
       : '해당 id를 가진 게시글이 없음';

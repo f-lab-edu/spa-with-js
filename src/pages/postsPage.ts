@@ -1,8 +1,6 @@
 class PostsPage {
-  constructor(props) {}
-
-  render() {
-    const $postsPage = document.createElement('div');
+  render(): HTMLDivElement {
+    const $postsPage: HTMLDivElement = document.createElement('div');
     $postsPage.innerText = '리스트';
     return $postsPage;
   }

@@ -1,8 +1,6 @@
 class NotFoundPage {
-  constructor(props) {}
-
-  render() {
-    const $notFoundPage = document.createElement('div');
+  render(): HTMLDivElement {
+    const $notFoundPage: HTMLDivElement = document.createElement('div');
     $notFoundPage.innerText = 'NOT FOUND';
     return $notFoundPage;
   }

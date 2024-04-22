@@ -31,6 +31,9 @@ module.exports = {
       },
     ],
   },
+  resolve: {
+    extensions: ['.ts', '.js'], // .ts 확장자 명시
+  },
   plugins: [
     new HtmlWebpackPlugin({
       // HTML 파일 처리
