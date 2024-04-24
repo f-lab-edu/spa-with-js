@@ -1,10 +1,12 @@
-type PostPageProps = {
-  searchParams: URLSearchParams;
-};
-class PostPage {
+import { PageProps } from 'types/routeTypes';
+import BaseComponent from '../components/BaseComponent';
+
+type PostPageProps = PageProps;
+class PostPage extends BaseComponent<PostPageProps> {
   private readonly postId: string | null;
   constructor(props: PostPageProps) {
-    this.postId = props.searchParams.get('id');
+    super(props);
+    this.postId = props.searchParams?.get('id') ?? null;
   }
 
   render(): HTMLDivElement {

@@ -1,14 +1,14 @@
-import { PageComponent } from './types/routeTypes';
+import { PageComponent, PageProps } from 'types/routeTypes';
 
-export class Router {
-  private readonly routes: { [path: string]: PageComponent } = {};
+export class Router<T extends PageProps> {
+  private readonly routes: { [path: string]: PageComponent<T> } = {};
 
   constructor() {
     this.routes = {};
   }
 
   // 라우터 등록
-  addRoute(path: string, component: PageComponent) {
+  addRoute(path: string, component: PageComponent<T>) {
     this.routes[path] = component;
   }
 
@@ -25,7 +25,7 @@ export class Router {
 
     const $app = document.getElementById('app') as HTMLElement;
     $app.innerHTML = ''; // 기존 컨텐츠를 클리어
-    const componentInstance = new Component({ searchParams });
+    const componentInstance = new Component({ searchParams } as T);
     $app.appendChild(componentInstance.render());
   }
 }

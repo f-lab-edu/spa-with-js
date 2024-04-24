@@ -1,11 +1,16 @@
-import { Router } from '../router';
-import { NotFoundPageMock, PostPageMock, PostsPageMock } from './pageMocks';
+import { Router } from 'router';
+import {
+  NotFoundPageMock,
+  PostPageMock,
+  PostsPageMock,
+} from './mocks/pageMocks';
+import { PageProps } from 'types/routeTypes';
 describe('Router', () => {
-  let router: Router;
+  let router: Router<PageProps>;
 
   beforeEach(() => {
     document.body.innerHTML = '<div id="app"></div>';
-    router = new Router();
+    router = new Router<PageProps>();
     router.addRoute('/', PostsPageMock);
     router.addRoute('/posts', PostsPageMock);
     router.addRoute('/post', PostPageMock);
