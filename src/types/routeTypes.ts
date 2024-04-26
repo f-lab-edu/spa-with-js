@@ -1,13 +1,13 @@
-import BaseComponent from '../components/BaseComponent';
+import PageComponent from '../components/PageComponent';
 
 export type PageProps = {
   searchParams?: URLSearchParams;
 };
-export type PageComponent<T extends PageProps = {}> = new (
+export type PageComponentConstructor<T extends PageProps = {}> = new (
   props: T,
-) => BaseComponent<T>;
+) => PageComponent<T>;
 
-export type Route<T extends PageProps = {}> = {
+export type Route = {
   path: string;
-  component: PageComponent<T>;
+  component: PageComponentConstructor<PageProps>;
 };

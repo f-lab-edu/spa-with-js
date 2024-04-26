@@ -1,10 +1,9 @@
 import './app.css';
-import { Router } from 'router';
+import { Router } from './router';
 import routes from './routes';
-import { PageProps } from 'types/routeTypes';
 
 class App {
-  private router: Router<PageProps>;
+  private router: Router;
   constructor() {
     this.router = new Router();
     this.initializeRoutes();

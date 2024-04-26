@@ -1,8 +1,8 @@
 import { PageProps } from 'types/routeTypes';
-import BaseComponent from '../components/BaseComponent';
+import PageComponent from '../components/PageComponent';
 
-type PostPageProps = PageProps;
-class PostPage extends BaseComponent<PostPageProps> {
+type PostPageProps = PageProps & {};
+class PostPage extends PageComponent<PostPageProps> {
   private readonly postId: string | null;
   constructor(props: PostPageProps) {
     super(props);

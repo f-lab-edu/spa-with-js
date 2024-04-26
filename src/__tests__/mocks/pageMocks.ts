@@ -1,7 +1,7 @@
-import BaseComponent from '../../components/BaseComponent';
+import PageComponent from '../../components/PageComponent';
 import { PageProps } from 'types/routeTypes';
 
-export class PostsPageMock extends BaseComponent<PageProps> {
+export class PostsPageMock extends PageComponent<PageProps> {
   constructor(props: PageProps) {
     super(props);
   }
@@ -12,7 +12,7 @@ export class PostsPageMock extends BaseComponent<PageProps> {
   }
 }
 
-export class PostPageMock extends BaseComponent<PageProps> {
+export class PostPageMock extends PageComponent<PageProps> {
   private searchParams: URLSearchParams;
 
   constructor(props: PageProps) {
@@ -31,7 +31,7 @@ export class PostPageMock extends BaseComponent<PageProps> {
   }
 }
 
-export class NotFoundPageMock extends BaseComponent<PageProps> {
+export class NotFoundPageMock extends PageComponent<PageProps> {
   constructor(props: PageProps) {
     super(props);
   }

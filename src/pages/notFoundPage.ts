@@ -1,7 +1,7 @@
-import BaseComponent from '../components/BaseComponent';
+import PageComponent from '../components/PageComponent';
 import { PageProps } from 'types/routeTypes';
 
-class NotFoundPage extends BaseComponent<PageProps> {
+class NotFoundPage extends PageComponent<PageProps> {
   constructor(props: PageProps) {
     super(props);
   }
