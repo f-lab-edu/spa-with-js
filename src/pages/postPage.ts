@@ -1,4 +1,4 @@
-import { PageProps } from 'types/routeTypes';
+import { PageProps } from 'types/route';
 import PageComponent from '../components/PageComponent';
 import Todo from '../components/todo';
 

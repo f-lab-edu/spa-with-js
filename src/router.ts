@@ -1,4 +1,4 @@
-import { PageComponentConstructor, PageProps } from 'types/routeTypes';
+import { PageComponentConstructor } from 'types/route';
 
 export class Router {
   private readonly routes: { [path: string]: PageComponentConstructor } = {};

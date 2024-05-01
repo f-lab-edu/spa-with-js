@@ -1,5 +1,5 @@
 import PageComponent from '../../components/PageComponent';
-import { PageProps } from 'types/routeTypes';
+import { PageProps } from 'types/route';
 
 export class PostsPageMock extends PageComponent<PageProps> {
   constructor(props: PageProps) {

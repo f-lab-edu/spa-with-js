@@ -1,13 +1,12 @@
 import api from './index';
-import { TodoItem } from 'types/todoTypes';
-import { CustomAxiosRequestConfig, OnErrorHandler } from 'types/apiTypes';
+import { CustomAxiosRequestConfig, ErrorResponseHandler } from 'types/api';
 
 const getTodo = async (
   todoId: number,
-  onError: OnErrorHandler,
-): Promise<TodoItem> => {
+  onError: ErrorResponseHandler,
+): Promise<TodoTypes.Todo> => {
   const config: CustomAxiosRequestConfig = { onError };
-  const response = await api.get<TodoItem>(`/todos/${todoId}`, config);
+  const response = await api.get<TodoTypes.Todo>(`/todos/${todoId}`, config);
   return response?.data;
 };
 

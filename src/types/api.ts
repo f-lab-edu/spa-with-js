@@ -7,15 +7,15 @@ export type ApiConfig = {
   };
 };
 
-export type OnErrorHandler = (e: ErrorResponse) => void;
+export type ErrorResponseHandler = (e: ErrorResponse) => void;
 
 export type CustomAxiosRequestConfig = AxiosRequestConfig & {
   // AxiosRequestConfig를 확장하여 onError를 추가
-  onError?: OnErrorHandler;
+  onError?: ErrorResponseHandler;
 };
 
 export type ErrorResponse = {
   config: {
-    onError?: OnErrorHandler;
+    onError?: ErrorResponseHandler;
   };
 };

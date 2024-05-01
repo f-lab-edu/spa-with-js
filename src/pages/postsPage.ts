@@ -1,5 +1,5 @@
 import PageComponent from '../components/PageComponent';
-import { PageProps } from 'types/routeTypes';
+import { PageProps } from 'types/route';
 
 class PostsPage extends PageComponent<PageProps> {
   constructor(props: PageProps) {

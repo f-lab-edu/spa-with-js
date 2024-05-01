@@ -1,6 +1,6 @@
 import { getTodo } from '../api/todoService';
 import '../styles/todo.css';
-import { TodoItem } from 'types/todoTypes';
+import { ErrorResponse } from 'types/api';
 
 type TodoProps = {
   todoId: number;
@@ -8,13 +8,13 @@ type TodoProps = {
 
 class Todo {
   todoId: number;
-  todo: TodoItem | null = null;
+  todo: TodoTypes.Todo | null = null;
   constructor(props: TodoProps) {
     this.todoId = props.todoId;
   }
 
   async fetchTodo() {
-    this.todo = await getTodo(this.todoId, (e: any) =>
+    this.todo = await getTodo(this.todoId, (e: ErrorResponse) =>
       console.log('fetchTodoError: ', e),
     );
     this.render();

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import apiConfig from './config';
-import { ErrorResponse } from 'types/apiTypes';
+import { ErrorResponse } from 'types/api';
 
 const api = axios.create(apiConfig);
 

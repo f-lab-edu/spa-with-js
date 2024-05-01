@@ -1,4 +1,4 @@
-import { PageProps } from 'types/routeTypes';
+import { PageProps } from 'types/route';
 
 abstract class PageComponent<T extends PageProps = PageProps> {
   protected constructor(protected props: T) {}
