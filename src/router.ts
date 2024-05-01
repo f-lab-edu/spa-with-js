@@ -1,14 +1,18 @@
+import { PageComponentConstructor } from 'types/route';
+
 export class Router {
+  private readonly routes: { [path: string]: PageComponentConstructor } = {};
+
   constructor() {
     this.routes = {};
   }
 
   // 라우터 등록
-  addRoute(path, component) {
+  addRoute(path: string, component: PageComponentConstructor) {
     this.routes[path] = component;
   }
 
-  async render(fullPath) {
+  async render(fullPath: string) {
     const url = new URL(fullPath, window.location.origin);
     const pathname = url.pathname;
     const searchParams = new URLSearchParams(url.search);
@@ -20,8 +24,10 @@ export class Router {
     }
 
     const $app = document.getElementById('app');
+    if (!$app) throw new Error('App element 없음');
+
     $app.innerHTML = ''; // 기존 컨텐츠를 클리어
     const componentInstance = new Component({ searchParams });
-    $app.appendChild(await componentInstance.render());
+    $app.appendChild(componentInstance.render());
   }
 }

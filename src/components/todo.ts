@@ -1,13 +1,20 @@
 import { getTodo } from '../api/todoService';
 import '../styles/todo.css';
+import { ErrorResponse } from 'types/api';
+
+type TodoProps = {
+  todoId: number;
+};
+
 class Todo {
-  constructor(props) {
+  todoId: number;
+  todo: TodoTypes.Todo | null = null;
+  constructor(props: TodoProps) {
     this.todoId = props.todoId;
-    this.todo = null;
   }
 
   async fetchTodo() {
-    this.todo = await getTodo(this.todoId, (e) =>
+    this.todo = await getTodo(this.todoId, (e: ErrorResponse) =>
       console.log('fetchTodoError: ', e),
     );
     this.render();
@@ -25,7 +32,7 @@ class Todo {
         </div>
       `;
     } else {
-      $todo.innerText = 'Loading...';
+      $todo.innerText = '해당 TODO 없음';
     }
     return $todo;
   }

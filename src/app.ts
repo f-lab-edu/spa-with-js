@@ -3,6 +3,7 @@ import { Router } from './router';
 import routes from './routes';
 
 class App {
+  private router: Router;
   constructor() {
     this.router = new Router();
     this.initializeRoutes();
@@ -10,16 +11,16 @@ class App {
   }
 
   // 주소 라우팅 등록
-  initializeRoutes() {
+  initializeRoutes(): void {
     routes.forEach((route) => {
       this.router.addRoute(route.path, route.component);
     });
   }
 
   // 이벤트 등록
-  addEventListeners() {
+  addEventListeners(): void {
     document.addEventListener('DOMContentLoaded', async () => {
-      const fullPath = window.location.href;
+      const fullPath: string = window.location.href;
       await this.router.render(fullPath);
     });
   }

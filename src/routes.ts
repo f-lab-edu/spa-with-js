@@ -1,8 +1,9 @@
 import PostsPage from './pages/postsPage';
 import PostPage from './pages/postPage';
 import NotFound from './pages/notFoundPage';
+import { Route } from 'types/route';
 
-const routes = [
+const routes: Route[] = [
   { path: '/', component: PostsPage },
   { path: '/posts', component: PostsPage },
   { path: '/post', component: PostPage },
